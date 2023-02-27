@@ -1,0 +1,96 @@
+@import "../assets/themes/colors.scss" ;
+
+.headerStyle{
+    background: transparent !important;
+   
+    height: 73px !important;
+    align-items: center;
+    transition: background-color 0.5s ease;
+    
+}
+
+.activeHeaderStyle{
+    background: #fff !important;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 2px 2px, rgba(0, 0, 0, 0.02) 0px 1px 0px;
+    height: 73px !important;
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.logo{
+    float: right;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    h2{
+        margin-top: 5px;
+        font-family: 'TheSansArabic-bold';
+        color:#2b486c;
+    }
+    img{
+        height: 60px;
+        margin: 8px 24px 16px 0; 
+    }
+    :hover{
+      cursor: pointer;  
+    }
+}
+
+.ant-menu-title-content{
+    font-size: 20px;
+}
+
+.ant-menu-item-active{
+    color: #2b486c !important;
+    &:after {
+        border-bottom: 0px solid transparent !important;
+     }
+}
+
+.ant-menu-item-selected{
+    color: #2b486c !important;
+    &:after {
+       border-bottom: 2px solid #2b486c !important;
+    }
+}
+
+.ant-menu-submenu{
+    
+    &:after {
+        border-bottom: 2px solid #2b486c !important;
+     }
+}
+
+.ant-menu-horizontal{
+    border-bottom-width: 0px !important;
+}
+
+.helpHeader{
+    text-align: center;
+    padding-top: 50px ;
+    
+    color: #23306c;
+    }
+    .about-border {
+        display: block;
+        width: 130px;
+        height: 3px;
+        background: #2b486c;
+        margin: 15px auto;
+        
+}
+
+.page_title_container{
+    background-color: #2b486c ;
+    min-height: 100px;
+    margin-top: 70px;
+    padding-top: 20px;
+
+    h1{
+        text-align: center;
+        font-size: 40px;
+        color: #fff;
+    }
+}
+

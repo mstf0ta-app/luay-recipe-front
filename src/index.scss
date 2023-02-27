@@ -1,0 +1,86 @@
+@import "./assets/themes/colors.scss" ;
+
+@font-face {
+  font-family: 'TheSansArabic-bold';
+  src: url('./assets/fonts/BahijTheSansArabic-Bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TheSansArabic-Plain';
+  src: url('./assets/fonts/BahijTheSansArabic-Plain.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TheSansArabic-light';
+  src: url('./assets/fonts/BahijTheSansArabic-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+*{
+  font-family: 'TheSansArabic-Plain', sans-serif;
+  direction: rtl;
+}
+
+.mainContainer{
+  min-height: 100vh;
+  margin-bottom: 40px;
+  // padding-top: 90px;
+}
+
+.myFormItem{
+  display:flex;
+  flex-direction:column !important;
+  margin-left: 50px !important;
+  align-items:flex-start;
+  padding: 10px;
+  
+  // width: 100%;
+}
+
+@media (max-width: 575px) {
+  .bottomContainer{
+      div{
+          h1{
+              font-size: 4vw;
+          }
+      }
+  }
+
+  .myFormItem{
+      display:flex ;
+      width: 100%;
+      flex-direction:column ;
+      align-items:flex-start;
+      padding: 0px;
+      // width: 100%;
+      input{
+          width:60vw ;
+      }
+  }
+}
+
+.titleText{
+  color: #121455;
+  align-self: center;
+  text-align: center;
+  padding-top: 40px;
+
+  
+}
+
+.under_gr{
+  background: linear-gradient(90deg, rgb(43, 210, 255), rgb(131, 149, 247)) !important;
+    border-width: 0px !important;
+    height: 5px !important;
+    margin-left: auto;
+    margin-right: auto;
+   
+    
+
+}
