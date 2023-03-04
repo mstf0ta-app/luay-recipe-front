@@ -1,25 +1,20 @@
 import { Layout, Menu,} from 'antd';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { HomeFilled,BankOutlined} from '@ant-design/icons';
-import Colors from '../assets/themes/colors';
+import { HomeFilled} from '@ant-design/icons';
 import { appIdentifier, getLocal } from '../globalFunctions/api';
-import { GiModernCity } from "react-icons/gi";
-import { MdPointOfSale,MdLocationCity } from "react-icons/md";
+import { MdPointOfSale } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
-import { CgList } from "react-icons/cg";
-import { GiRotaryPhone} from "react-icons/gi";
 import { RiAdminLine} from "react-icons/ri";
 
 const {  Sider } = Layout;
-const { SubMenu } = Menu;
+
 
 
 function GlobalSider(props) {
     const {currentPage, currentSub} = props
     const navigate = useNavigate();
 
-    const localUserType = getLocal(appIdentifier)?.user?.user_type || null 
 
 
   return (

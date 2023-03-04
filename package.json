@@ -1,6 +1,5 @@
 {
   "name": "phone-book",
-  "homepage": "https://luay.mstf0freelance.store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

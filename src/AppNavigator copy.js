@@ -30,23 +30,28 @@ import MngSales from './screens/adminManagement/mngSales';
 
 
 
+
+
+
+
+
 export default function AppNavigator() {
 
-  const {loggedIn,setLoggedIn,} = useContext(GlobalContext);
+  // const {loggedIn,setLoggedIn,} = useContext(GlobalContext);
   const [loading, setLoading] = useState(false) 
   const location = useLocation();
-  useEffect(() => {
+  // useEffect(() => {
     
-    const token = getLocal(appIdentifier)?.jwt|| ''
-    if (token) {
-      setLoggedIn(true);
-      setLoading(false);
-    }else{
-      setLoggedIn(false);
-      setLoading(false);
-    }
+  //   const token = getLocal(appIdentifier)?.jwt|| ''
+  //   if (token) {
+  //     setLoggedIn(true);
+  //     setLoading(false);
+  //   }else{
+  //     setLoggedIn(false);
+  //     setLoading(false);
+  //   }
     
-  }, [location])
+  // }, [location])
 
   
   
@@ -72,7 +77,7 @@ export default function AppNavigator() {
               
                   <Routes  >
                       <Route path='/' exact  element={<ProtectedRoute><MngHome/></ProtectedRoute> } /> 
-                      <Route path='/login' exact element={<Login/>} /> 
+                      {/* <Route path='/login' exact element={<Login/>} /> 
 
 
                       <Route path='/mnghome' exact element={<ProtectedRoute><MngHome/></ProtectedRoute> } /> 
@@ -83,7 +88,13 @@ export default function AppNavigator() {
 
 
 
-                      
+                       <Route path='/infos' exact element={<ProtectedRoute><MngInfos/></ProtectedRoute>} /> 
+                       <Route path='/cities' exact element={<ProtectedRoute><MngCities/></ProtectedRoute>} /> 
+                        
+                       <Route path='/companytypes' exact element={<ProtectedRoute><MngCompanyTypes/></ProtectedRoute>} /> 
+                       <Route path='/activities' exact element={<ProtectedRoute><MngActivities/></ProtectedRoute>} /> 
+
+                 */}
                        
                       
                       <Route path='*' exact element={<NotMatch/>} /> 

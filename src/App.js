@@ -9,6 +9,7 @@ const  App = ()=> {
           <AppNavigator/>
       </GlobalContextProvider>
     </Router>
+  
   )
 }
 

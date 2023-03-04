@@ -1,4 +1,4 @@
-import { Col, Layout, Row } from 'antd'
+import { Col, Row } from 'antd'
 import Colors from '../assets/themes/colors'
 
 function GlobalFooter() {
