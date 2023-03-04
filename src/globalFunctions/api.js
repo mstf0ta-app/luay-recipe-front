@@ -1,5 +1,5 @@
 // export const globalUrl = 'http://localhost:1337/api/'
-export const globalUrl = 'https://api.mstf0freelance.store/'
+export const globalUrl = 'https://api.mstf0freelance.store/api/'
 export const appIdentifier = 'installmentApp'
 export const appName = 'نظام البيع بالتقسيط'
 export const dateFormat = 'YYYY-MM-DD -  hh:mm'
