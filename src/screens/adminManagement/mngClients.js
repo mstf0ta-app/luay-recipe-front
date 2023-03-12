@@ -11,6 +11,7 @@ import GlobalHeader from '../../components/GlobalHeader';
 import moment from 'moment';
 import AdminHeader from '../../components/AdminHeader';
 import {BsCart4} from 'react-icons/bs'
+import Search from 'antd/lib/input/Search';
 const {Content} = Layout;
 const { Column, ColumnGroup } = Table;
 const { Option } = Select;
@@ -31,6 +32,7 @@ const  MngClients = ()=> {
     const [infoFormInfo, setInfoFormInfo] = useState(null)
     const [clients, setClients] = useState([]);
     const [totalCount, setTotalCount] = useState(null);
+    const [clientName, setclientName] = useState(null);
 
 
     const localUserType = getLocal(appIdentifier)?.user?.user_type || null 
@@ -59,11 +61,15 @@ const  MngClients = ()=> {
    
 
       const getClients = (current=1,pageSize=25)=>{
+        setClients([]);
+        setTotalCount(0);
         setAddLoading(true)
         const token = getLocal(appIdentifier)?.jwt ; 
         var myHeaders = new Headers();
         myHeaders.append("Authorization", `Bearer ${token}` );
         myHeaders.append("Content-Type", "application/json");
+
+        let serchUrl = clientName?.length>0 ?`&filters[name][$contains]=${clientName}`:''
 
         var requestOptions = {
             method: 'GET',
@@ -71,7 +77,7 @@ const  MngClients = ()=> {
             redirect: 'follow'
           };
           
-          fetch(`${globalUrl}clients`, requestOptions)
+          fetch(`${globalUrl}clients?pagination[page]=${current}&pagination[pageSize]=${pageSize}${serchUrl}`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 console.log('result',result)
@@ -83,6 +89,8 @@ const  MngClients = ()=> {
             .then(()=>console.log(clients))
             .catch(error => console.log('error', error));
       }
+
+
 
 
 
@@ -224,6 +232,12 @@ const  MngClients = ()=> {
        getClients();
      
       }, [])
+      
+
+      useEffect(() => {
+        getClients();
+      
+       }, [clientName])
       
     
     
@@ -410,12 +424,23 @@ const  MngClients = ()=> {
                 <Row  style={{padding:10}} >
 
                 <Col md={24} >
-                    {
-      
+                    <Row justify='space-between' >
+                        
                         <Button onClick={()=> setAddInfoVisible(true) } style={{backgroundColor:Colors.primary, borderWidth:0}} type="primary" shape="round" icon={<PlusOutlined />} size={20}>
                             اضافة  زبون
                         </Button>
-                    }
+                        <Search
+                            loading={addLoading}
+                            placeholder="input search text"
+                            onChange={(txt)=> setclientName(txt.target.value)}
+                            onSearch={(txt)=>console.log('heeerew',txt)}
+                            style={{
+                                width: '40%',
+                            }}
+                        />
+
+                    </Row>
+                    
                    
                    </Col>
 
